@@ -38,8 +38,6 @@ class ColumnPaginatorComponentWithoutStyles extends React.Component<StyledLocalP
   render(): JSX.Element {
     log.debug("Rendering ColumnPaginatorComponent");
     const matrix = matrixStore.getMatrixById(this.props.matrixId);
-    const enableLeftNav = matrix.columnBlockIndex > 0;
-    const enableRightNav = matrix.columnDefinitions.areMoreLeafElements;
     return <div className={this.props.classes.root}>
       <Button disabled={!enableLeftNav} onClick={this.navigateLeft} >&lt;</Button>
       <Button disabled={!enableRightNav} onClick={this.navigateRight} >&gt;</Button>
@@ -53,6 +51,8 @@ class ColumnPaginatorComponentWithoutStyles extends React.Component<StyledLocalP
 
   @autobind
   private navigateRight() {
+    <Button disabled={!enableLeftNav} onClick={this.navigateLeft} >&lt;</Button>
+    <Button disabled={!enableRightNav} onClick={this.navigateRight} >&gt;</Button>
     Dispatcher.dispatch(new ScrollPageAction(this.props.matrixId, "next"));
   }
 }

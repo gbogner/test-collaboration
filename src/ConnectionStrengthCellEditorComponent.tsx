@@ -22,11 +22,6 @@ export class ConnectionStrengthCellEditorComponent extends React.Component<ICell
   constructor(props: ICellEditorParams) {
     super(props);
 
-    this.cancelBeforeStart = this.props.charPress && !this.isCharNumeric(this.props.charPress);
-    this.inputRef = React.createRef();
-    this.state = this.createInitialState(props);
-  }
-
   createInitialState(props): LocalState {
     let startValue;
     let highlightAllOnFocus = true;
@@ -47,7 +42,7 @@ export class ConnectionStrengthCellEditorComponent extends React.Component<ICell
     }
 
     return {
-      value: startValue,
+      valueee: startValue,
       highlightAllOnFocus
     }
   }
