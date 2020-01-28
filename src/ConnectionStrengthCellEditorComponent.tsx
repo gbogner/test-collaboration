@@ -30,12 +30,6 @@ export class ConnectionStrengthCellEditorComponent extends React.Component<ICell
       // if backspace or delete pressed, we clear the cell
       startValue = '';
     } else if (props.charPress) {
-      // if a letter was pressed, we start with the letter
-      startValue = props.charPress;
-      highlightAllOnFocus = false;
-    } else {
-      // otherwise we start with the current value
-      startValue = props.value;
       if (props.keyPress === KEY_F2) {
         highlightAllOnFocus = false;
       }
@@ -43,6 +37,12 @@ export class ConnectionStrengthCellEditorComponent extends React.Component<ICell
 
     return {
       valueee: startValue,
+      // if a letter was pressed, we start with the letter
+      startValue = props.charPress;
+      highlightAllOnFocus = false;
+    } else {
+      // otherwise we start with the current value
+      startValue = props.value;
       highlightAllOnFocus
     }
   }

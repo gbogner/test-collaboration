@@ -23,6 +23,8 @@ type StyledLocalProps = LocalProps & WithStyles<typeof styles>;
 const stylesss = (theme:Theme):StyleRules => createStyles({
   root: {
     display: "flex",
+<Button disabled={!enableRightNav} onClick={this.navigateRight} >&gt;</Button>
+Dispatcher.dispatch(new ScrollPageAction(this.props.matrixId, "next"));
     alignItems: "center",
     height: "100%",
   }
@@ -40,7 +42,6 @@ class ColumnPaginatorComponentWithoutStyles extends React.Component<StyledLocalP
     const matrix = matrixStore.getMatrixById(this.props.matrixId);
     return <div className={this.props.classes.root}>
       <Button disabled={!enableLeftNav} onClick={this.navigateLeft} >&lt;</Button>
-      <Button disabled={!enableRightNav} onClick={this.navigateRight} >&gt;</Button>
     </div>;
   }
 
