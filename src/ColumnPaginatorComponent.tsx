@@ -20,7 +20,7 @@ interface LocalProps {
 
 type StyledLocalProps = LocalProps & WithStyles<typeof styles>;
 
-const styles = (theme:Theme):StyleRules => createStyles({
+const stylesss = (theme:Theme):StyleRules => createStyles({
   root: {
     display: "flex",
     alignItems: "center",
@@ -58,5 +58,4 @@ class ColumnPaginatorComponentWithoutStyles extends React.Component<StyledLocalP
 }
 
 export const ColumnPaginatorComponent = withStyles(styles)(ColumnPaginatorComponentWithoutStyles);
-
 
